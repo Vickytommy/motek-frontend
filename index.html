@@ -33,6 +33,8 @@
             display: flex;
             justify-content: space-between;
             gap: 20px;
+            max-width: 800px;
+            margin: auto;
         }
         .event-action {   
             margin-bottom: 20px;
@@ -42,7 +44,14 @@
             width: 100%;
             color: white;
             padding: 20px;
-            font-size: 30px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .event-action:hover {
+            background-color: #1f366b !important;
+        }
+        .event-action.selected {
+            background-color: #0d1933 !important;
         }
         .event img {
             margin-top: 80px;
@@ -101,6 +110,29 @@
             border-radius: 20px;
             width: 100%;
             margin-top: 60px;
+        }
+        .event-date {
+            display: none;
+            background-color: white;
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 40px;
+        }
+        .event-date.active {
+            display: block;
+        }
+        .event-date label {
+            display: block;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 1px solid black;
+            outline: none;
+            width: 100%;
+            cursor: pointer;
+        }
+        .event-date label.selected {
+            background-color: #0d1933;
+            color: white;
         }
     </style>
 </head>
@@ -221,15 +253,36 @@
     <section id="event" class="event">
         <div class="event-content">
             <h2 class="event-header">להרשמה לאירוע , אנא בחרו יום :</h2>
-            <!-- <div class="event-actions">
-                <a href="day1.php" class="event-action">יום שני 15.04.25</a>
-                <a href="day2.php" class="event-action">יום שלישי 16.04.25</a>
-                <a href="day3.php" class="event-action">יום רביעי 17.04.25</a>
-            </div> -->
+            <div class="event-actions">
+                <a id="date_1" class="event-action">יום שני 15.04.25</a>
+                <a id="date_2" class="event-action">יום שלישי 16.04.25</a>
+                <a id="date_3" class="event-action">יום רביעי 17.04.25</a>
+            </div>
+
+            <div id="date_1_drop" class="event-date">
+                <label for="date1_1">מחזור א’: 9:00-12:00</label>
+                <input hidden id="date1_1" type="radio" value="1" name="date1" required/>
+                <label for="date1_2">מחזור ב’: 14:00-17:30</label>
+                <input hidden id="date1_2" type="radio" value="2" name="date1" required/>
+            </div>
+
+            <div id="date_2_drop" class="event-date">
+                <label for="date2_1">מחזור א’: 9:00-12:00</label>
+                <input hidden id="date1_1" type="radio" value="1" name="date2" required/>
+                <label for="date2_2">מחזור ב’: 14:00-17:30</label>
+                <input hidden id="date2_2" type="radio" value="2" name="date2" required/>
+            </div>
+            
+            <div id="date_3_drop" class="event-date">
+                <label for="date3_1">מחזור א’: 9:00-12:00</label>
+                <input hidden id="date3_1" type="radio" value="1" name="date3" required/>
+                <label for="date3_2">מחזור ב’: 14:00-17:30</label>
+                <input hidden id="date3_2" type="radio" value="2" name="date3" required/>
+            </div>
         </div>
 
         <form id="event-form" class="event-form" action="submit.php" method="post">
-            <div class="select-container">
+            <!-- <div class="select-container">
                 <select id="date-cycle" name="date-cycle" required>
                     <option value="" disabled selected>Select</option>
                     <option value="1">יום שני 15.04.25, מחזור א’: 9:00-12:00</option>
@@ -239,7 +292,7 @@
                     <option value="5">יום רביעי 17.04.25, מחזור א’: 9:00-12:00</option>
                     <option value="6">יום רביעי 17.04.25</option>
                 </select>
-            </div>
+            </div> -->
 
             <div class="gridding">
                 <input id="firstname" type="text" name="firstname" placeholder="שם פרטי" required />
@@ -351,6 +404,86 @@
             const menu = document.querySelector('.menu');
             menu.classList.toggle('active');
         }
+
+        const date_1 = document.getElementById('date_1');
+        const date_2 = document.getElementById('date_2');
+        const date_3 = document.getElementById('date_3');
+        const date_1_drop = document.getElementById('date_1_drop');
+        const date_2_drop = document.getElementById('date_2_drop');
+        const date_3_drop = document.getElementById('date_3_drop');
+        date_1.addEventListener('click', function() {
+            date_1.classList.add('selected');
+            date_2.classList.remove('selected');
+            date_3.classList.remove('selected');
+
+            date_1_drop.classList.add('active');
+            date_2_drop.classList.remove('active');
+            date_3_drop.classList.remove('active');
+        });
+        date_2.addEventListener('click', function() {
+            date_1.classList.remove('selected');
+            date_2.classList.add('selected');
+            date_3.classList.remove('selected');
+
+            date_1_drop.classList.remove('active');
+            date_2_drop.classList.add('active');
+            date_3_drop.classList.remove('active');
+        });
+        date_3.addEventListener('click', function() {
+            date_1.classList.remove('selected');
+            date_2.classList.remove('selected');
+            date_3.classList.add('selected');
+
+            date_1_drop.classList.remove('active');
+            date_2_drop.classList.remove('active');
+            date_3_drop.classList.add('active');
+        });
+        
+        
+        const date1 = document.getElementsByName('date1');
+        date1.forEach(radio => {
+            radio.addEventListener('change', function() {
+            const labels = document.querySelectorAll(`label[for="${this.id}"]`);
+            labels.forEach(label => label.classList.add('selected'));
+
+            const allLabels = document.querySelectorAll('.event-date label');
+            allLabels.forEach(label => {
+                if (label.htmlFor !== this.id) {
+                label.classList.remove('selected');
+                }
+            });
+            });
+        });
+        
+        const date2 = document.getElementsByName('date2');
+        date2.forEach(radio => {
+            radio.addEventListener('change', function() {
+            const labels = document.querySelectorAll(`label[for="${this.id}"]`);
+            labels.forEach(label => label.classList.add('selected'));
+
+            const allLabels = document.querySelectorAll('.event-date label');
+            allLabels.forEach(label => {
+                if (label.htmlFor !== this.id) {
+                label.classList.remove('selected');
+                }
+            });
+            });
+        });
+
+        const date3 = document.getElementsByName('date3');
+        date3.forEach(radio => {
+            radio.addEventListener('change', function() {
+            const labels = document.querySelectorAll(`label[for="${this.id}"]`);
+            labels.forEach(label => label.classList.add('selected'));
+
+            const allLabels = document.querySelectorAll('.event-date label');
+            allLabels.forEach(label => {
+                if (label.htmlFor !== this.id) {
+                label.classList.remove('selected');
+                }
+            });
+            });
+        });
 
         const tickets = document.getElementById('num_tickets');
         tickets.addEventListener('change', function() {
