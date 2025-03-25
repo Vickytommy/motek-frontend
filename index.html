@@ -374,13 +374,16 @@
 
         document.getElementById("event-form").addEventListener("submit", async function(event) {
             event.preventDefault();
-            
-            const formData = new FormData(this);
-            console.log('[data]', formData);
-            const response = await fetch("http://127.0.0.1:8000/api/register", {
+           
+            const BASE_URL = window.location.origin; // Automatically detects the base URL
+            const response = await fetch(`${BASE_URL}/api/register`, {  
                 method: "POST",
                 body: formData
             });
+
+            
+            const formData = new FormData(this);
+            console.log('[data]', BASE_URL, formData, response);
 
             const result = await response.json();
             alert(result.message);
