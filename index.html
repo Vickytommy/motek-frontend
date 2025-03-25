@@ -375,6 +375,7 @@
         document.getElementById("event-form").addEventListener("submit", async function(event) {
             event.preventDefault();
            
+            const formData = new FormData(this);
             const BASE_URL = window.location.origin; // Automatically detects the base URL
             const response = await fetch(`${BASE_URL}/api/register`, {  
                 method: "POST",
@@ -382,7 +383,6 @@
             });
 
             
-            const formData = new FormData(this);
             console.log('[data]', BASE_URL, formData, response);
 
             const result = await response.json();
