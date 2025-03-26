@@ -1,0 +1,104 @@
+
+<!--
+/* Webfont: ������ ���
+ * https://alefalefalef.co.il/almoni-neue/
+ * AlefAlefAlef (c) 2018 ���
+ * License: https://alefalefalef.co.il/webfonts/
+ * Licensed pageviews limit: 1,000,000/month
+
+
+
+
+ */ -->
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:800; /*(ultrabold)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-800.eot');
+	src: url('../fonts/almoni-neue-aaa-800.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-800.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-800.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:200; /*(ultralight)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-200.eot');
+	src: url('../fonts/almoni-neue-aaa-200.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-200.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-200.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:900b; /*(ultrablack)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-900b.eot');
+	src: url('../fonts/almoni-neue-aaa-900b.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-900b.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-900b.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:700; /*(bold)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-700.eot');
+	src: url('../fonts/almoni-neue-aaa-700.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-700.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-700.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:500; /*(medium)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-500.eot');
+	src: url('../fonts/almoni-neue-aaa-500.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-500.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-500.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:600; /*(demibold)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-600.eot');
+	src: url('../fonts/almoni-neue-aaa-600.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-600.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-600.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:100; /*(thin)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-100.eot');
+	src: url('../fonts/almoni-neue-aaa-100.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-100.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-100.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:300; /*(light)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-300.eot');
+	src: url('../fonts/almoni-neue-aaa-300.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-300.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-300.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:400; /*(regular)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-400.eot');
+	src: url('../fonts/almoni-neue-aaa-400.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-400.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-400.ttf') format('truetype');
+}
+@font-face{
+	font-family:'almoni-neue';
+	font-weight:900; /*(black)*/
+	font-style: normal;
+	src: url('../fonts/almoni-neue-aaa-900.eot');
+	src: url('../fonts/almoni-neue-aaa-900.eot#iefix') format('embedded-opentype'),
+		url('../fonts/almoni-neue-aaa-900.woff') format('woff'),
+		url('../fonts/almoni-neue-aaa-900.ttf') format('truetype');
+}
+
+

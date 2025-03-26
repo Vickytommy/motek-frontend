@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Motek-kkl</title>
+    <link rel="stylesheet" href="assets/almoni.css">
     <link rel="stylesheet" type="text/css" href="index.css">
-    
+
     <style>
         .goto {
             position: sticky;
@@ -25,18 +26,18 @@
 <body>
     <nav id="nav" class="nav">
         <ul class="menu">
-            <li><a onclick="toggleMenu()" href="#info">פרטי האירוע</a></li>
-            <li><a onclick="toggleMenu()" href="#info-map">דרכי הגעה, חניות</a></li>
+            <li><a onclick="toggleMenu()" href="#info1">פרטי האירוע</a></li>
+            <li><a onclick="toggleMenu()" href="#info2">דרכי הגעה, חניות</a></li>
             <li><a onclick="toggleMenu()" href="#event">הרשמה </a></li>
             <li><a onclick="toggleMenu()" href="#banner">מידע חשוב</a></li>
             
-            <li><a onclick="toggleMenu()" href="#banner1">מכסת כרטיסים</a></li>
+            <!-- <li><a onclick="toggleMenu()" href="#banner1">מכסת כרטיסים</a></li>
             <li><a onclick="toggleMenu()" href="#banner2">הגעה לאירוע</a></li>
             <li><a onclick="toggleMenu()" href="#banner3">כניסה לאירוע</a></li>
             <li><a onclick="toggleMenu()" href="#banner4">ביטחון ובטיחות</a></li>
             <li><a onclick="toggleMenu()" href="#banner5">נגישות </a></li>
 
-            <li><a href="#footer">צור קשר</a></li>
+            <li><a href="#footer">צור קשר</a></li> -->
 
         </ul>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -48,11 +49,23 @@
     <section id="hero" class="hero">
         <img class="hero-img" src="assets/Logo_Motek.png" />
         <div class="hero-content">
-            <h2 class="hero-header">מותק של יער - פסטיבל מתוק לכל המשפחה</h2>
-            <p class="hero-text">
+            <!-- <h2 class="hero-header">מותק של יער - פסטיבל מתוק לכל המשפחה</h2> -->
+            <h2 class="hero-header">
+                מותק של יער 
+                <br />   
+                פסטיבל מתוק לכל המשפחה
+            </h2>
+
+            <!-- <p class="hero-text">
                 בין צמרות העצים, תחת כיפת השמיים, נבנה יחד חוויה מתוקה ובלתי נשכחת שתחבר ותעניק לכולנו רגעים של אושר מתוק וצבעוני עם שלל פעילויות חווייתיות ומהנות.
                 במותק של יער תוכלו להנות מחויות יצירה אתגריות, תוכלו להכין ספר מתכונים אישי ולהצטלם בסיטואציות צילום בטכנולוגיה מתקדמת, תוכלו לחגוג במסיבת בועות חגיגית ולקפוץ במתקנים מתנפחים ואפילו תכלו להיכנס לעולם של VR עתידני או סתם לשבת ולצפות בהצגה מושקעת על הבמה. בקיצור, בפסח הקרוב אתם הולכים ליהנות.                
-            </p>
+            </p> -->
+            <p class="hero-text">קרן קימת לישראל מזמינה אתכם לחגיגה מתוקה בפסטיבל "מותק של יער", שיתקיים בחוה"מ פסח</p>
+            <p class="hero-text">בין צמרות העצים, תחת כיפת השמיים, נהנה יחד מחוויה מתוקה ובלתי נשכחת שתחבר ותעניק לכולנו רגעים</p>
+            <p class="hero-text">של אושר מתוק וצבעוני עם שלל פעילויות חווייתיות, ערכיות ומהנות לכל המשפחה</p>
+            <p class="hero-text">במותק של יער תוכלו להנות מאין ספור חוויות מרתקות</p>
+            <p class="hero-text">בואו לחוות את המתוק שביער – אירוע שיהפוך את חג הפסח לחגיגה של רגעים מתוקים ומחייכים!</p>
+
         </div>
     </section>
 
@@ -134,23 +147,13 @@
         </div>
     </section>
 
-    <section id="info" class="info">
-        <h2 id="info-header" class="info-header">בואו לבלות עם כל המשפחה בחגיגה מתוקה ומהנה ביערות קק"ל</h2>
+    <section id="info1" class="info">
+        <h2 id="info-header" class="info-header">בואו לבלות עם כל המשפחה ביערות קק"ל</h2>
         <p class="info-text">הפרטים:</p>
         <p class="info-text">מועד: חול המועד פסח, 15-17 באפריל</p>
         <p class="info-text">שעות: מחזור א': 9:00-12:30, מחזור ב': 14:00-17:30</p>
         <p class="info-text">מיקום: חניון לילה שורש</p>
         <p class="info-text">* הכניסה לאירוע בהרשמה מראש בלבד</p>
-        
-        <!-- <img src="assets/map.png" alt="Logo"> -->
-        <iframe
-            id="info-map"
-            class="info-map"
-            src="https://maps.google.com/maps?q=N81QCGCurYCDLZAp7&output=embed"
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
     </section>
 
     <a href="#event" class="goto" id="goto">הרשמה</a>
@@ -167,7 +170,7 @@
                 </div>
     
                 <div id="date_drop" class="event-date">
-                    <label for="time1">מחזור א’: 9:00-12:00</label>
+                    <label for="time1">מחזור א’: 9:00-12:30</label>
                     <input hidden id="time1" type="radio" value="1" name="time" required/>
                     <label for="time2">מחזור ב’: 14:00-17:30</label>
                     <input hidden id="time2" type="radio" value="2" name="time" required/>
@@ -212,11 +215,11 @@
 
             <div class="gridding-checkbox">
                 <input id="policy" type="checkbox" name="policy" required />
-                <a href="assets/policy.docx" download="policy.docx">מדיניות שימוש ופרטיות</a>
+                <a href="assets/policy.pdf" download="policy.pdf">מדיניות שימוש ופרטיות</a>
             </div>
             <div class="gridding-checkbox">
                 <input id="terms" type="checkbox" name="terms" required />
-                <a href="assets/terms.docx" download="terms.docx">תקנון פעילות</a>
+                <a href="assets/terms.pdf" download="terms.pdf">תקנון פעילות</a>
             </div>
 
             <button class="submit-btn" type="submit">שלח</button>
@@ -224,7 +227,9 @@
     </section>
 
     <section id="banner" class="banner">
-        <h2 class="banner-header">באנר/כתב גדול: ההגעה לאירוע תתאפשר מחניון דיסטינו בלבד ותתבצע באמצעות שאטלים מוסדרים בהצגת כרטיס לאירוע בלבד</h2>
+        <h2 class="banner-header">ההגעה לאירוע תתאפשר מחניון דסטינו בלבד ותתבצע באמצעות שאטלים ובהצגת כרטיס לאירוע בלבד</h2>
+        <h3 id="banner1" style="color: black; margin-bottom: 20px;" class="banner-title">מידע חשוב</h3>
+
         <h3 id="banner1" class="banner-title">מכסת כרטיסים</h3>
         <ul class="banner-list">
             <li class="banner-text">ניתן להירשם לעד 6 כרטיסים לכל למשפחה</li>
@@ -270,17 +275,26 @@
         <!-- <img src="assets/map.png" alt="Logo"> -->
     </section>
 
+    <section id="info2" class="info">
+        <h2 id="info-map-header" class="info-map-header">דרכי הגעה, חניות</h2>
+        <p class="info-text">חניון שורש וחניון דסטינו</p>
+        
+        <!-- <img src="assets/map.png" alt="Logo"> -->
+        <iframe class="info-map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3391.2021207618213!2d35.059657!3d31.792240999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDQ3JzMyLjEiTiAzNcKwMDMnMzQuOCJF!5e0!3m2!1sen!2sng!4v1742982930193!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://waze.com/ul/hsv8uvg3q2" class="info-link">ניווט באמצעות וייז</a>
+    </section>
+
     <section id="footer" class="footer">
         <div class="footer-container">
             <h2 class="footer-header">צור קשר</h2>
-            <p class="footer-text">לפניות בוואטסאפ בלבד - 054-3296515</p>
+            <p class="footer-text">לפניות בוואטסאפ בלבד - <span style="white-space: nowrap">054-3296515</span></p>
             <a href="https://www.kkl.org.il/" class="footer-link">לאתר קק”ל</a>
             <p class="footer-text">האתר מופעל ע"י קבוצת בלוסטון הפקות בע"מ</p>
         </div>
     </section>
-
     
     <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" type="text/javascript"></script>
  
     <script src="https://www.negishim.com/accessibility/accessibility_pro_group255.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -391,32 +405,36 @@
             event.preventDefault();
            
             const formData = new FormData(this);
-            // const BASE_URL = window.location.origin; // Automatically detects the base URL
-            const BASE_URL = 'http://127.0.0.1:8000';
+            const BASE_URL = "https://motek-kkl.co.il";
+            // const BASE_URL = "http://127.0.0.1:8000";
             const response = await fetch(`${BASE_URL}/api/register`, {  
                 method: "POST",
-                body: formData
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
             });
 
-            
-            console.log('[data]', BASE_URL, formData, response);
-
             const result = await response.json();
-            alert(result.message);
+            
+            // console.log('[data]', BASE_URL, formData, response, result);
+
+            if (response.ok) {
+                Swal.fire({
+                    // Success
+                    icon: 'success',
+                    title: 'הצלחה',
+                    text: result.message || 'ההרשמה הצליחה'
+                });
+            } else {
+                Swal.fire({
+                    // Error
+                    icon: 'error',
+                    title: 'שגיאה',
+                    text: result.message || 'ההרשמה נכשלה'
+                });
+            }
         });
-
-        // window.onload = function () {
-        //     setTimeout(() => {
-        //         let widget = document.getElementById("accessibility-button"); // Change to actual ID if different
-        //         if (widget) {
-        //             widget.style.position = "fixed";
-        //             widget.style.bottom = "20px";
-        //             widget.style.right = "20px"; // Adjust for RTL
-        //             widget.style.zIndex = "9999";
-        //         }
-        //     }, 1000); // Delay to ensure the script has loaded
-        // };
-
     </script>
     
 </body>
