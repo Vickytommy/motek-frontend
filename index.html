@@ -25,9 +25,19 @@
 <body>
     <nav id="nav" class="nav">
         <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a onclick="toggleMenu()" href="#info">פרטי האירוע</a></li>
+            <li><a onclick="toggleMenu()" href="#info-map">דרכי הגעה, חניות</a></li>
+            <li><a onclick="toggleMenu()" href="#event">הרשמה </a></li>
+            <li><a onclick="toggleMenu()" href="#banner">מידע חשוב</a></li>
+            
+            <li><a onclick="toggleMenu()" href="#banner1">מכסת כרטיסים</a></li>
+            <li><a onclick="toggleMenu()" href="#banner2">הגעה לאירוע</a></li>
+            <li><a onclick="toggleMenu()" href="#banner3">כניסה לאירוע</a></li>
+            <li><a onclick="toggleMenu()" href="#banner4">ביטחון ובטיחות</a></li>
+            <li><a onclick="toggleMenu()" href="#banner5">נגישות </a></li>
+
+            <li><a href="#footer">צור קשר</a></li>
+
         </ul>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="logo">
@@ -125,7 +135,7 @@
     </section>
 
     <section id="info" class="info">
-        <h2 class="info-header">בואו לבלות עם כל המשפחה בחגיגה מתוקה ומהנה ביערות קק"ל</h2>
+        <h2 id="info-header" class="info-header">בואו לבלות עם כל המשפחה בחגיגה מתוקה ומהנה ביערות קק"ל</h2>
         <p class="info-text">הפרטים:</p>
         <p class="info-text">מועד: חול המועד פסח, 15-17 באפריל</p>
         <p class="info-text">שעות: מחזור א': 9:00-12:30, מחזור ב': 14:00-17:30</p>
@@ -134,6 +144,7 @@
         
         <!-- <img src="assets/map.png" alt="Logo"> -->
         <iframe
+            id="info-map"
             class="info-map"
             src="https://maps.google.com/maps?q=N81QCGCurYCDLZAp7&output=embed"
             style="border:0;" 
@@ -212,29 +223,29 @@
         </form>
     </section>
 
-    <section class="banner">
+    <section id="banner" class="banner">
         <h2 class="banner-header">באנר/כתב גדול: ההגעה לאירוע תתאפשר מחניון דיסטינו בלבד ותתבצע באמצעות שאטלים מוסדרים בהצגת כרטיס לאירוע בלבד</h2>
-        <h3 class="banner-title">מכסת כרטיסים</h3>
+        <h3 id="banner1" class="banner-title">מכסת כרטיסים</h3>
         <ul class="banner-list">
             <li class="banner-text">ניתן להירשם לעד 6 כרטיסים לכל למשפחה</li>
             <li class="banner-text">מספר המקומות מוגבל ועל בסיס מקום פנוי, מבקר שאינו רשום לא יוכל להיכנס לשטח האירוע</li>
         </ul>
 
-        <h3 class="banner-title">הגעה לאירוע</h3>
+        <h3 id="banner2" class="banner-title">הגעה לאירוע</h3>
         <ul class="banner-list">
             <li class="banner-text">חניה תתבצע בחניון "דסטינו" בלבד,  אין חניה בחניון לילה שורש, למעט לבעלי מוגבלות וכיסאות גלגלים</li>
             <li class="banner-text">לטובת הגעה לאירוע ישירות מהחניון יהיו שאטלים הלוך ושאטלים חזור לבאי האירוע בלבד ובהצגת כרטיס לאירוע. אין צורך בהרשמה מראש לשאטלים</li>
             <li class="banner-text">לשאלות ובירורים ניתן לפנות בוואטסאפ: 054-3296515</li>
         </ul>
 
-        <h3 class="banner-title">כניסה לאירוע</h3>
+        <h3 id="banner3" class="banner-title">כניסה לאירוע</h3>
         <ul class="banner-list">
             <li class="banner-text">הכניסה לאירוע מותנית בהצגת כרטיס הזמנה מקורי (לא תתאפשר כניסה עם כרטיסים שאינם מקוריים).</li>
             <li class="banner-text">יש להירשם מראש לתאריך ולסבב ספציפיים – לא ניתן להיכנס לסבב שלא תואם את פרטי הכרטיס</li>
             <li class="banner-text">יש להקפיד על נהלי ההפקה ולהישמע להוראות הסדרנים ואנשי הביטחון</li>
         </ul>
 
-        <h3 class="banner-title">ביטחון ובטיחות</h3>
+        <h3 id="banner4" class="banner-title">ביטחון ובטיחות</h3>
         <ul class="banner-list">
             <li class="banner-text">כל הנכנסים יעברו בדיקה ביטחונית בהתאם לדרישות המשטרה והביטחון.</li>
             <li class="banner-text">הכניסה עם נשק אסורה, למעט בעלי אישור מתאים על פי נהלי משטרת ישראל</li>
@@ -247,7 +258,7 @@
             </ul>
         </ul>
 
-        <h3 class="banner-title">נגישות</h3>
+        <h3 id="banner5" class="banner-title">נגישות</h3>
         <ul class="banner-list">
             <li class="banner-text">במקום קיימים שירותים נגישים.</li>
             <li class="banner-text">ישנה מערכת לולאות השראה עבור אנשים עם מוגבלות שמיעה.</li>
