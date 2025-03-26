@@ -7,132 +7,17 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     
     <style>
-        .event {
-            padding: 40px;
-            max-width: 1200px;
-            margin: auto;
-            text-align: center;
-        }
-        .event-img {
-            background-image: url('assets/Logo_Motek.png');background-size: cover;
-            background-position: center;
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 1 / 1;
-            margin: auto;
-        }
-        .event-header {
-            font-size: 55px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            line-height: 1.2;
-            margin-bottom: 48px;
-            color: #1f366b;
-        }   
-        .event-actions {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        .event-action {   
-            margin-bottom: 20px;
-            background-color: #003a6a !important;
-            display: inline-block;
-            border-radius: 20px;
-            width: 100%;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .event-action:hover {
-            background-color: #1f366b !important;
-        }
-        .event-action.selected {
-            background-color: #0d1933 !important;
-        }
-        .event img {
-            margin-top: 80px;
-            border-radius: 8%;
-        }
-        .event-form {
-            /* display: grid; */
-            max-width: 800px;
-            margin: auto;
-        }
-        .event-form .gridding {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            /* margin-bottom: 20px; */
-        }
-        .event-form input[type="text"] {
-            font-size: 1.5rem;
-            padding: 10px 20px;
-            border: 1px solid black;
-            outline: none;
-            margin-bottom: 40px;
-            width: 100%;
-        }
-        .event-form .gridding-checkbox {    
-            display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-            align-items: center;
-        }
-        .event-form .gridding-checkbox label { 
-            font-size: 24px;
-        }
-        .event-form .gridding-checkbox input[type="checkbox"] {
-            width: 24px;
-            height: 24px;
-        }
-        .event-form .select-container {
-            padding: 10px 20px;
-            border: 1px solid black;
-            margin-bottom: 40px;
-            background-color: #fff;
-        }
-        .event-form select {
-            border: none;
-            outline: none;
-            font-size: 1.5rem;
-            width: 100%;
-        }
-        .event-form .submit-btn {
+        .goto {
+            position: sticky;
+            bottom: 0;
             background-color: #003a6a;
             color: white;
-            padding: 20px;
-            font-size: 30px;
+            padding: 16px;
+            font-size: 20px;
             border: none;
-            border-radius: 20px;
             width: 100%;
-            margin-top: 60px;
-        }
-        .event-date {
-            display: none;
-            background-color: white;
-            max-width: 800px;
-            margin: auto;
-            margin-bottom: 40px;
-        }
-        .event-date.active {
             display: block;
-        }
-        .event-date label {
-            display: block;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border: 1px solid black;
-            outline: none;
-            width: 100%;
-            cursor: pointer;
-        }
-        .event-date label.selected {
-            background-color: #0d1933;
-            color: white;
+            text-align: center;
         }
     </style>
 </head>
@@ -151,11 +36,11 @@
     </nav>
 
     <section id="hero" class="hero">
-        <div class="hero-img"></div>
+        <img class="hero-img" src="assets/Logo_Motek.png" />
         <div class="hero-content">
             <h2 class="hero-header">מותק של יער - פסטיבל מתוק לכל המשפחה</h2>
             <p class="hero-text">
-                של אושר מתוק וצבעוני עם שלל פעילויות חווייתיות ומהנות.
+                בין צמרות העצים, תחת כיפת השמיים, נבנה יחד חוויה מתוקה ובלתי נשכחת שתחבר ותעניק לכולנו רגעים של אושר מתוק וצבעוני עם שלל פעילויות חווייתיות ומהנות.
                 במותק של יער תוכלו להנות מחויות יצירה אתגריות, תוכלו להכין ספר מתכונים אישי ולהצטלם בסיטואציות צילום בטכנולוגיה מתקדמת, תוכלו לחגוג במסיבת בועות חגיגית ולקפוץ במתקנים מתנפחים ואפילו תכלו להיכנס לעולם של VR עתידני או סתם לשבת ולצפות בהצגה מושקעת על הבמה. בקיצור, בפסח הקרוב אתם הולכים ליהנות.                
             </p>
         </div>
@@ -250,49 +135,26 @@
         <img src="assets/map.png" alt="Logo">
     </section>
 
+    <a href="#event" class="goto" id="goto">Go to</a>
+
     <section id="event" class="event">
-        <div class="event-content">
-            <h2 class="event-header">להרשמה לאירוע , אנא בחרו יום :</h2>
-            <div class="event-actions">
-                <a id="date_1" class="event-action">יום שני 15.04.25</a>
-                <a id="date_2" class="event-action">יום שלישי 16.04.25</a>
-                <a id="date_3" class="event-action">יום רביעי 17.04.25</a>
-            </div>
-
-            <div id="date_1_drop" class="event-date">
-                <label for="date1_1">מחזור א’: 9:00-12:00</label>
-                <input hidden id="date1_1" type="radio" value="1" name="date1" required/>
-                <label for="date1_2">מחזור ב’: 14:00-17:30</label>
-                <input hidden id="date1_2" type="radio" value="2" name="date1" required/>
-            </div>
-
-            <div id="date_2_drop" class="event-date">
-                <label for="date2_1">מחזור א’: 9:00-12:00</label>
-                <input hidden id="date1_1" type="radio" value="1" name="date2" required/>
-                <label for="date2_2">מחזור ב’: 14:00-17:30</label>
-                <input hidden id="date2_2" type="radio" value="2" name="date2" required/>
-            </div>
-            
-            <div id="date_3_drop" class="event-date">
-                <label for="date3_1">מחזור א’: 9:00-12:00</label>
-                <input hidden id="date3_1" type="radio" value="1" name="date3" required/>
-                <label for="date3_2">מחזור ב’: 14:00-17:30</label>
-                <input hidden id="date3_2" type="radio" value="2" name="date3" required/>
-            </div>
-        </div>
-
         <form id="event-form" class="event-form" action="submit.php" method="post">
-            <!-- <div class="select-container">
-                <select id="date-cycle" name="date-cycle" required>
-                    <option value="" disabled selected>Select</option>
-                    <option value="1">יום שני 15.04.25, מחזור א’: 9:00-12:00</option>
-                    <option value="2">יום שני 15.04.25</option>
-                    <option value="3">יום שלישי 16.04.25, מחזור א’: 9:00-12:00</option>
-                    <option value="4">יום שלישי 16.04.25</option>
-                    <option value="5">יום רביעי 17.04.25, מחזור א’: 9:00-12:00</option>
-                    <option value="6">יום רביעי 17.04.25</option>
-                </select>
-            </div> -->
+            <div class="event-content">
+                <h2 class="event-header">להרשמה לאירוע , אנא בחרו יום :</h2>
+                <div class="event-actions">
+                    <a id="date_1" class="event-action">יום שני 15.04.25</a>
+                    <a id="date_2" class="event-action">יום שלישי 16.04.25</a>
+                    <a id="date_3" class="event-action">יום רביעי 17.04.25</a>
+                    <input hidden id="date" name="date" required/>
+                </div>
+    
+                <div id="date_drop" class="event-date">
+                    <label for="time1">מחזור א’: 9:00-12:00</label>
+                    <input hidden id="time1" type="radio" value="1" name="time" required/>
+                    <label for="time2">מחזור ב’: 14:00-17:30</label>
+                    <input hidden id="time2" type="radio" value="2" name="time" required/>
+                </div>
+            </div>
 
             <div class="gridding">
                 <input id="firstname" type="text" name="firstname" placeholder="שם פרטי" required />
@@ -300,8 +162,8 @@
             </div>
 
             <div class="gridding">
-                <input id="mobile" type="text" name="mobile" placeholder="סלולר" required />
-                <input id="mail" type="text" name="mail" placeholder="מייל" required />
+                <input id="mobile" dir="rtl" type="tel" name="mobile" placeholder="סלולר" required />
+                <input id="mail" type="email" name="mail" placeholder="מייל" required />
             </div>
 
             <div class="gridding">
@@ -311,7 +173,7 @@
 
             <div class="select-container">
                 <select id="num_tickets" name="num_tickets" required>
-                    <option value="" disabled selected>Select</option>
+                    <option value="" disabled selected>כמות כרטיסים</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -332,11 +194,11 @@
 
             <div class="gridding-checkbox">
                 <input id="policy" type="checkbox" name="policy" required />
-                <label for="policy">מדיניות שימוש ופרטיות</label>
+                <a href="assets/policy.docx" download="policy.docx">מדיניות שימוש ופרטיות</a>
             </div>
             <div class="gridding-checkbox">
                 <input id="terms" type="checkbox" name="terms" required />
-                <label for="terms">תקנון פעילות</label>
+                <a href="assets/terms.docx" download="terms.docx">תקנון פעילות</a>
             </div>
 
             <button class="submit-btn" type="submit">שלח</button>
@@ -404,74 +266,66 @@
             const menu = document.querySelector('.menu');
             menu.classList.toggle('active');
         }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        window.addEventListener('scroll', function() {
+            const goto = document.getElementById('goto');
+            const eventSection = document.getElementById('event');
+            const eventSectionTop = eventSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
 
+            if (eventSectionTop <= windowHeight) {
+                goto.style.display = 'none';
+            } else {
+                goto.style.display = 'block';
+            }
+        });
+
+        const date = document.getElementById('date');
         const date_1 = document.getElementById('date_1');
         const date_2 = document.getElementById('date_2');
         const date_3 = document.getElementById('date_3');
-        const date_1_drop = document.getElementById('date_1_drop');
-        const date_2_drop = document.getElementById('date_2_drop');
-        const date_3_drop = document.getElementById('date_3_drop');
+        const date_drop = document.getElementById('date_drop');
+        // const date_2_drop = document.getElementById('date_2_drop');
+        // const date_3_drop = document.getElementById('date_3_drop');
         date_1.addEventListener('click', function() {
             date_1.classList.add('selected');
             date_2.classList.remove('selected');
             date_3.classList.remove('selected');
+            date.value = 1;
 
-            date_1_drop.classList.add('active');
-            date_2_drop.classList.remove('active');
-            date_3_drop.classList.remove('active');
+            date_drop.classList.add('active');
+            // date_2_drop.classList.remove('active');
+            // date_3_drop.classList.remove('active');
         });
         date_2.addEventListener('click', function() {
             date_1.classList.remove('selected');
             date_2.classList.add('selected');
             date_3.classList.remove('selected');
+            date.value = 2;
 
-            date_1_drop.classList.remove('active');
-            date_2_drop.classList.add('active');
-            date_3_drop.classList.remove('active');
+            date_drop.classList.add('active');
         });
         date_3.addEventListener('click', function() {
             date_1.classList.remove('selected');
             date_2.classList.remove('selected');
             date_3.classList.add('selected');
+            date.value = 3;
 
-            date_1_drop.classList.remove('active');
-            date_2_drop.classList.remove('active');
-            date_3_drop.classList.add('active');
+            date_drop.classList.add('active');
         });
         
         
-        const date1 = document.getElementsByName('date1');
-        date1.forEach(radio => {
-            radio.addEventListener('change', function() {
-            const labels = document.querySelectorAll(`label[for="${this.id}"]`);
-            labels.forEach(label => label.classList.add('selected'));
-
-            const allLabels = document.querySelectorAll('.event-date label');
-            allLabels.forEach(label => {
-                if (label.htmlFor !== this.id) {
-                label.classList.remove('selected');
-                }
-            });
-            });
-        });
-        
-        const date2 = document.getElementsByName('date2');
-        date2.forEach(radio => {
-            radio.addEventListener('change', function() {
-            const labels = document.querySelectorAll(`label[for="${this.id}"]`);
-            labels.forEach(label => label.classList.add('selected'));
-
-            const allLabels = document.querySelectorAll('.event-date label');
-            allLabels.forEach(label => {
-                if (label.htmlFor !== this.id) {
-                label.classList.remove('selected');
-                }
-            });
-            });
-        });
-
-        const date3 = document.getElementsByName('date3');
-        date3.forEach(radio => {
+        const time = document.getElementsByName('time');
+        time.forEach(radio => {
             radio.addEventListener('change', function() {
             const labels = document.querySelectorAll(`label[for="${this.id}"]`);
             labels.forEach(label => label.classList.add('selected'));
@@ -509,7 +363,8 @@
             event.preventDefault();
            
             const formData = new FormData(this);
-            const BASE_URL = window.location.origin; // Automatically detects the base URL
+            // const BASE_URL = window.location.origin; // Automatically detects the base URL
+            const BASE_URL = 'http://127.0.0.1:8000';
             const response = await fetch(`${BASE_URL}/api/register`, {  
                 method: "POST",
                 body: formData
