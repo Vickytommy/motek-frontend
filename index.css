@@ -47,6 +47,8 @@ body {
     background-color: #8ac3e8;
     direction: rtl;
     font-family: 'Open Sans Hebrew', sans-serif;
+    font-family: 'almoni-neue';
+    scroll-behavior: smooth;
 }
 
 /* NAVIGATION */
@@ -135,12 +137,15 @@ body {
 
 /* HERO SECTION */
 .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 40px;
     max-width: 1200px;
     margin: auto;
 }
 .hero-img {
-    background-image: url('assets/Logo_Motek.png');background-size: cover;
+    background-size: cover;
     background-position: center;
     width: 100%;
     max-width: 600px;
@@ -202,11 +207,6 @@ body {
     vertical-align: text-top;
     line-height: 1.2;
 }
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 /* INFO SECTION */
 .info {
@@ -243,6 +243,137 @@ body {
 }
 
 /* EVENT SECTION */
+.event {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+.event-img {
+    background-image: url('assets/Logo_Motek.png');background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+}
+.event-header {
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 48px;
+    color: #1f366b;
+}   
+.event-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+.event-action {   
+    margin-bottom: 20px;
+    background-color: #003a6a !important;
+    display: inline-block;
+    border-radius: 20px;
+    width: 100%;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.event-action:hover {
+    background-color: #1f366b !important;
+}
+.event-action.selected {
+    background-color: #0d1933 !important;
+}
+.event img {
+    margin-top: 80px;
+    border-radius: 8%;
+}
+.event-form {
+    /* display: grid; */
+    max-width: 800px;
+    margin: auto;
+}
+.event-form .gridding {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* margin-bottom: 20px; */
+}
+.event-form input[type="text"],
+.event-form input[type="email"],
+.event-form input[type="tel"] {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: 1px solid black;
+    outline: none;
+    margin-bottom: 40px;
+    width: 100%;
+}
+.event-form .gridding-checkbox {    
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+.event-form .gridding-checkbox a { 
+    font-size: 24px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.event-form .gridding-checkbox input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+}
+.event-form .select-container {
+    padding: 10px 20px;
+    border: 1px solid black;
+    margin-bottom: 40px;
+    background-color: #fff;
+}
+.event-form select {
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    width: 100%;
+}
+.event-form .submit-btn {
+    background-color: #003a6a;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 60px;
+}
+.event-date {
+    display: none;
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.event-date.active {
+    display: block;
+}
+.event-date label {
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+}
+.event-date label.selected {
+    background-color: #0d1933;
+    color: white;
+}
 
 /* BANNER SECTION */
 .banner {
@@ -326,4 +457,93 @@ body {
 .footer-link {
     text-decoration: underline;
     cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .nav .logo img {
+        height: 60px;
+    }
+
+    .hero-header {
+        font-size: 30px;
+    }
+    .hero-text {
+        font-size: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+    }
+    .gallery-item .title {
+        font-size: 18px;
+    }
+
+    .info-header {
+        font-size: 30px;
+    }
+    .info-text {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .event-header {
+        font-size: 30px;
+    }
+
+    .event-actions {
+        /* flex-direction: column; */
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+    .event-action {
+        font-size: 18px;
+        margin-bottom: 0;
+        padding: 16px;
+    }
+    .event-form input[type="text"],
+    .event-form input[type="email"],
+    .event-form input[type="tel"] {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .event-form .gridding-checkbox a { 
+        font-size: 20px;
+    }
+    .event-form select {
+        font-size: 20px;
+    }
+    .event-form .select-container {
+        margin-bottom: 20px;
+    }
+    .event-form .submit-btn {
+        padding: 16px;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .banner-header {
+        font-size: 30px;
+    }
+    .banner-title {
+        font-size: 28px;
+    }
+    .banner-list {
+        margin-bottom: 40px;
+    }
+    .banner-text,
+    .banner-subtext {
+        font-size: 18px;
+    }
+
+    .footer-container {
+        padding: 40px;
+    }
+    .footer-header {
+        font-size: 30px;
+    }
+    .footer-text {
+        font-size: 20px;
+    }
 }
