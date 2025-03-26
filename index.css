@@ -466,6 +466,7 @@ body {
 
 
 .btn_accessibility {
+    top: unset !important;
     bottom: 20px !important;
 }
 
