@@ -241,6 +241,11 @@ body {
     margin-top: 80px;
     border-radius: 8%;
 }
+.info-map {
+    margin-top: 40px;
+    width: 100%;
+    aspect-ratio: 1;
+}
 
 /* EVENT SECTION */
 .event {
@@ -460,6 +465,10 @@ body {
 }
 
 
+.btn_accessibility {
+    bottom: 20px !important;
+}
+
 @media (max-width: 768px) {
     .nav .logo img {
         height: 60px;
@@ -493,14 +502,14 @@ body {
     }
 
     .event-actions {
-        /* flex-direction: column; */
+        flex-direction: column;
         gap: 16px;
         margin-bottom: 20px;
     }
     .event-action {
         font-size: 18px;
         margin-bottom: 0;
-        padding: 16px;
+        padding: 10px;
     }
     .event-form input[type="text"],
     .event-form input[type="email"],
