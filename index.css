@@ -192,6 +192,7 @@ body {
 }
 .gallery-item img {
     border-radius: 8%;
+    width: 100%;
 }
 .gallery-item .title {
     color: #003a6a;
@@ -484,11 +485,24 @@ body {
     cursor: pointer;
 }
 
-
+/* EXTRAS */
+.goto {
+    position: sticky;
+    bottom: 0;
+    background-color: #003a6a;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
 .btn_accessibility {
     top: unset !important;
     bottom: 20px !important;
 }
+
 
 @media (max-width: 768px) {
     .nav .logo img {
@@ -505,7 +519,7 @@ body {
 
     .gallery {
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 16px;
+        column-gap: 32px;
     }
     .gallery-item .title {
         font-size: 18px;
