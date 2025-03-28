@@ -218,16 +218,18 @@
         <h2 class="banner-header">ההגעה לאירוע תתאפשר מחניון דסטינו בלבד ותתבצע באמצעות שאטלים ובהצגת כרטיס לאירוע בלבד</h2>
         <h3 id="banner1" style="color: black; margin-bottom: 20px;" class="banner-title">מידע חשוב</h3>
 
-        <h3 id="banner1" class="banner-title">מכסת כרטיסים</h3>
+        <h3 class="banner-title">מכסת כרטיסים</h3>
         <ul class="banner-list">
-            <li class="banner-text">ניתן להירשם לעד 6 כרטיסים לכל למשפחה</li>
+            <li class="banner-text">ניתן לרשום עד 6 כרטיסים לכל משפחה</li>
             <li class="banner-text">מספר המקומות מוגבל ועל בסיס מקום פנוי, מבקר שאינו רשום לא יוכל להיכנס לשטח האירוע</li>
         </ul>
 
         <h3 id="banner2" class="banner-title">הגעה לאירוע</h3>
         <ul class="banner-list">
-            <li class="banner-text">חניה תתבצע בחניון "דסטינו" בלבד,  אין חניה בחניון לילה שורש, למעט לבעלי מוגבלות וכיסאות גלגלים</li>
-            <li class="banner-text">לטובת הגעה לאירוע ישירות מהחניון יהיו שאטלים הלוך ושאטלים חזור לבאי האירוע בלבד ובהצגת כרטיס לאירוע. אין צורך בהרשמה מראש לשאטלים</li>
+            <li class="banner-text">חניה תתבצע בחניון "דסטינו" בלבד,  אין חניה בחניון לילה שורש, למעט לבעלי מוגבלות וכיסאות גלגלים 
+            </li>
+            <li class="banner-text">לשירותכם, במהלך האירוע, יופעלו שאטלים מהחניון להגעה ובחזרה ובהצגת כרטיס לאירוע בלבד</li>
+            <li class="banner-text">אין צורך בהרשמה מראש לשאטלים</li>
             <li class="banner-text">לשאלות ובירורים ניתן לפנות בוואטסאפ: 054-3296515</li>
         </ul>
 
@@ -417,7 +419,8 @@
                     // Error
                     icon: 'error',
                     title: 'שגיאה',
-                    text: result.message || 'ההרשמה נכשלה'
+                    text: result.message
+                    // text: result.message || 'ההרשמה נכשלה'
                 });
             }
         });
