@@ -283,6 +283,7 @@
     </section>
     
     <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" type="text/javascript"></script>
  
     <script src="https://www.negishim.com/accessibility/accessibility_pro_group255.js" type="text/javascript"></script>
@@ -398,33 +399,28 @@
             const formData = new FormData(this);
             const BASE_URL = "https://motek-kkl.co.il";
             // const BASE_URL = "http://127.0.0.1:9000";
-            const response = await fetch(`${BASE_URL}/api/register`, {  
-                method: "POST",
-                body: formData,
-                headers: {
-                    "Accept": "application/json"
-                }
-            });
+            try {
+                const response = await axios.post(`${BASE_URL}/api/register`, formData, {
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "multipart/form-data"
+                    }
+                });
 
-            const result = await response.json();
-            
-            // console.log('[data]', BASE_URL, formData, response, result);
-
-            if (response.ok) {
                 Swal.fire({
                     // Success
                     icon: 'success',
                     title: 'הצלחה',
-                    text: result.message || 'ההרשמה הצליחה'
+                    text: response?.data?.message || 'ההרשמה הצליחה'
                 });
-            } else {
+            } catch (error) {
                 Swal.fire({
                     // Error
                     icon: 'error',
                     title: 'שגיאה',
-                    text: result.message
-                    // text: result.message || 'ההרשמה נכשלה'
+                    text: error.response?.data?.message || 'ההרשמה נכשלה'
                 });
+                console.error('[The Error] - ', error.response || error);
             }
         });
     </script>
