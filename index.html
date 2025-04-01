@@ -319,10 +319,10 @@
                         "Accept": "application/json"
                     }
                 });
-                console.log('User Limit Data:', response.data);
+                // console.log('User Limit Data:', response.data);
 
-                closedCycles = response.data.filter(cycle => cycle.current_count >= cycle.cycle_count);
-                console.log('Closed Cycles:', closedCycles);
+                closedCycles = response.data.filter(cycle => cycle.current_count + 1 >= cycle.cycle_count);
+                // console.log('Closed Cycles:', closedCycles);
 
                
 
