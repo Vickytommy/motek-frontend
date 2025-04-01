@@ -282,7 +282,7 @@
         <div class="footer-container">
             <h2 class="footer-header">צור קשר</h2>
             <p class="footer-text">לפניות בוואטסאפ בלבד - <span style="white-space: nowrap">054-3296515</span></p>
-            <a href="https://www.kkl.org.il/" class="footer-link">לאתר קק”ל</a>
+            <a href="https://www.kkl.org.il/" class="footer-link">event.tmicha@gmail.com</a>
             <p class="footer-text">האתר מופעל ע"י קבוצת בלוסטון הפקות בע"מ</p>
         </div>
     </section>
@@ -309,6 +309,11 @@
         const time_map = {
             'מחזור א’: 9:00-12:30': 1,
             'מחזור ב’: 14:00-17:30': 2
+        }
+
+        const time_map_reverse = {
+            1: 'מחזור א’: 9:00-12:30',
+            2: 'מחזור ב’: 14:00-17:30'
         }
 
         document.addEventListener("DOMContentLoaded", async function() {
@@ -378,6 +383,7 @@
                 radio.checked = false;
                 radio.disabled = false;
                 const labels = document.querySelectorAll(`label[for="${radio.id}"]`);
+                labels.forEach(label => label.textContent = time_map_reverse[radio.value]);
                 labels.forEach(label => label.classList.remove('selected'));
                 labels.forEach(label => label.classList.remove('disabled'));
             });
@@ -392,6 +398,12 @@
                     if (time_map[cycle.ticket_time] === parseInt(label.getAttribute('data-id'))) {
                         label.classList.add('disabled');
                         label.classList.remove('selected');
+                        if (time_map[cycle.ticket_time] === 1) {
+                            label.textContent = 'מחזור א’: הכרטיסים אזלו';
+                        } else {
+                            label.textContent = 'מחזור ב’: הכרטיסים אזלו';
+                        }
+                        
                         const correspondingInput = document.getElementById(label.getAttribute('for'));
                         if (correspondingInput) {
                             correspondingInput.disabled = true;
@@ -414,6 +426,7 @@
                 radio.checked = false;
                 radio.disabled = false;
                 const labels = document.querySelectorAll(`label[for="${radio.id}"]`);
+                labels.forEach(label => label.textContent = time_map_reverse[radio.value]);
                 labels.forEach(label => label.classList.remove('selected'));
                 labels.forEach(label => label.classList.remove('disabled'));
             });
@@ -428,6 +441,12 @@
                     if (time_map[cycle.ticket_time] === parseInt(label.getAttribute('data-id'))) {
                         label.classList.add('disabled');
                         label.classList.remove('selected');
+                        if (time_map[cycle.ticket_time] === 1) {
+                            label.textContent = 'מחזור א’: הכרטיסים אזלו';
+                        } else {
+                            label.textContent = 'מחזור ב’: הכרטיסים אזלו';
+                        }
+
                         const correspondingInput = document.getElementById(label.getAttribute('for'));
                         if (correspondingInput) {
                             correspondingInput.disabled = true;
@@ -448,6 +467,7 @@
                 radio.checked = false;
                 radio.disabled = false;
                 const labels = document.querySelectorAll(`label[for="${radio.id}"]`);
+                labels.forEach(label => label.textContent = time_map_reverse[radio.value]);
                 labels.forEach(label => label.classList.remove('selected'));
                 labels.forEach(label => label.classList.remove('disabled'));
             });
@@ -462,6 +482,12 @@
                     if (time_map[cycle.ticket_time] === parseInt(label.getAttribute('data-id'))) {
                         label.classList.add('disabled');
                         label.classList.remove('selected');
+                        if (time_map[cycle.ticket_time] === 1) {
+                            label.textContent = 'מחזור א’: הכרטיסים אזלו';
+                        } else {
+                            label.textContent = 'מחזור ב’: הכרטיסים אזלו';
+                        }
+
                         const correspondingInput = document.getElementById(label.getAttribute('for'));
                         if (correspondingInput) {
                             correspondingInput.disabled = true;
