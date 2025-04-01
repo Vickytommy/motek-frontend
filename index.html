@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="assets/almoni.css">
     <link rel="stylesheet" type="text/css" href="index.css">
 
-    <!-- <style>
-    </style> -->
+    <style>
+        .event-date label.disabled {
+            background-color: #c7c7c7;
+            cursor: not-allowed;
+            border: 1px solid #bababa;
+        }
+    </style>
 </head>
 
 <body>
@@ -151,16 +156,16 @@
             <div class="event-content">
                 <h2 class="event-header">להרשמה לאירוע , אנא בחרו יום :</h2>
                 <div class="event-actions">
-                    <a id="date_1" class="event-action">15.04.25 יום שלישי</a>
-                    <a id="date_2" class="event-action">16.04.25 יום רביעי</a>
-                    <a id="date_3" class="event-action">17.04.25 יום חמישי</a>
+                    <a id="date_1" data-id="1" class="event-action">15.04.25 יום שלישי</a>
+                    <a id="date_2" data-id="2" class="event-action">16.04.25 יום רביעי</a>
+                    <a id="date_3" data-id="3" class="event-action">17.04.25 יום חמישי</a>
                     <input hidden id="date" name="date" required autocomplete="off"/>
                 </div>
     
                 <div id="date_drop" class="event-date">
-                    <label for="time1">מחזור א’: 9:00-12:30</label>
+                    <label data-id="1" for="time1">מחזור א’: 9:00-12:30</label>
                     <input hidden id="time1" type="radio" value="1" name="time" required autocomplete="off"/>
-                    <label for="time2">מחזור ב’: 14:00-17:30</label>
+                    <label data-id="2" for="time2">מחזור ב’: 14:00-17:30</label>
                     <input hidden id="time2" type="radio" value="2" name="time" required autocomplete="off"/>
                 </div>
             </div>
@@ -294,6 +299,41 @@
     </script>
 
     <script>
+        let closedCycles = []; 
+        const day_map = {
+            'יום שני 15.04.25': 1,
+            'יום שלישי 16.04.25': 2,
+            'יום רביעי 17.04.25': 3
+        }
+
+        const time_map = {
+            'מחזור א’: 9:00-12:30': 1,
+            'מחזור ב’: 14:00-17:30': 2
+        }
+
+        document.addEventListener("DOMContentLoaded", async function() {
+            const BASE_URL = "https://motek-kkl.co.il";
+            try {
+                const response = await axios.get(`${BASE_URL}/api/user_limit`, {}, {
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                });
+                console.log('User Limit Data:', response.data);
+
+                closedCycles = response.data.filter(cycle => cycle.current_count >= cycle.cycle_count);
+                console.log('Closed Cycles:', closedCycles);
+
+               
+
+
+                // You can handle the response data here
+            } catch (error) {
+            console.error('Error fetching user limit:', error.response || error);
+            }
+        });
+
+
         function toggleMenu() {
             const menu = document.querySelector('.menu');
             menu.classList.toggle('active');
@@ -326,6 +366,7 @@
         const date_2 = document.getElementById('date_2');
         const date_3 = document.getElementById('date_3');
         const date_drop = document.getElementById('date_drop');
+        
         // const date_2_drop = document.getElementById('date_2_drop');
         // const date_3_drop = document.getElementById('date_3_drop');
         date_1.addEventListener('click', function() {
@@ -333,6 +374,32 @@
             date_2.classList.remove('selected');
             date_3.classList.remove('selected');
             date.value = 1;
+            time.forEach(radio => {
+                radio.checked = false;
+                radio.disabled = false;
+                const labels = document.querySelectorAll(`label[for="${radio.id}"]`);
+                labels.forEach(label => label.classList.remove('selected'));
+                labels.forEach(label => label.classList.remove('disabled'));
+            });
+
+            // const allLabels = document.querySelectorAll('.event-date label');
+            // allLabels.forEach(label => label.classList.remove('selected'));
+
+            const filteredCycles = closedCycles.filter(cycle => day_map[cycle.ticket_day] === 1);
+            filteredCycles.forEach(cycle => {
+                const labels = document.querySelectorAll('.event-date label');
+                labels.forEach(label => {
+                    if (time_map[cycle.ticket_time] === parseInt(label.getAttribute('data-id'))) {
+                        label.classList.add('disabled');
+                        label.classList.remove('selected');
+                        const correspondingInput = document.getElementById(label.getAttribute('for'));
+                        if (correspondingInput) {
+                            correspondingInput.disabled = true;
+                            correspondingInput.checked = false;
+                        }
+                    }
+                });
+            });
 
             date_drop.classList.add('active');
             // date_2_drop.classList.remove('active');
@@ -343,6 +410,32 @@
             date_2.classList.add('selected');
             date_3.classList.remove('selected');
             date.value = 2;
+            time.forEach(radio => {
+                radio.checked = false;
+                radio.disabled = false;
+                const labels = document.querySelectorAll(`label[for="${radio.id}"]`);
+                labels.forEach(label => label.classList.remove('selected'));
+                labels.forEach(label => label.classList.remove('disabled'));
+            });
+
+            // const allLabels = document.querySelectorAll('.event-date label');
+            // allLabels.forEach(label => label.classList.remove('selected'));  const filteredCycles = closedCycles.filter(cycle => day_map[cycle.ticket_day] === 1);
+            
+            const filteredCycles = closedCycles.filter(cycle => day_map[cycle.ticket_day] === 2);
+            filteredCycles.forEach(cycle => {
+                const labels = document.querySelectorAll('.event-date label');
+                labels.forEach(label => {
+                    if (time_map[cycle.ticket_time] === parseInt(label.getAttribute('data-id'))) {
+                        label.classList.add('disabled');
+                        label.classList.remove('selected');
+                        const correspondingInput = document.getElementById(label.getAttribute('for'));
+                        if (correspondingInput) {
+                            correspondingInput.disabled = true;
+                            correspondingInput.checked = false;
+                        }
+                    }
+                });
+            });
 
             date_drop.classList.add('active');
         });
@@ -351,6 +444,32 @@
             date_2.classList.remove('selected');
             date_3.classList.add('selected');
             date.value = 3;
+            time.forEach(radio => {
+                radio.checked = false;
+                radio.disabled = false;
+                const labels = document.querySelectorAll(`label[for="${radio.id}"]`);
+                labels.forEach(label => label.classList.remove('selected'));
+                labels.forEach(label => label.classList.remove('disabled'));
+            });
+
+            // const allLabels = document.querySelectorAll('.event-date label');
+            // allLabels.forEach(label => label.classList.remove('selected'));
+            
+            const filteredCycles = closedCycles.filter(cycle => day_map[cycle.ticket_day] === 3);
+            filteredCycles.forEach(cycle => {
+                const labels = document.querySelectorAll('.event-date label');
+                labels.forEach(label => {
+                    if (time_map[cycle.ticket_time] === parseInt(label.getAttribute('data-id'))) {
+                        label.classList.add('disabled');
+                        label.classList.remove('selected');
+                        const correspondingInput = document.getElementById(label.getAttribute('for'));
+                        if (correspondingInput) {
+                            correspondingInput.disabled = true;
+                            correspondingInput.checked = false;
+                        }
+                    }
+                });
+            });
 
             date_drop.classList.add('active');
         });
