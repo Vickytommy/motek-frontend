@@ -326,7 +326,7 @@
                 });
                 // console.log('User Limit Data:', response.data);
 
-                closedCycles = response.data.filter(cycle => cycle.current_count + 1 >= cycle.cycle_count);
+                closedCycles = response.data.filter(cycle => cycle.current_count >= cycle.cycle_count);
                 // console.log('Closed Cycles:', closedCycles);
 
                
